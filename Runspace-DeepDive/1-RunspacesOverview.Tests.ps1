@@ -12,7 +12,7 @@ Describe "Runspace Overview" {
             Write-Host "Starting $_"
             Start-Sleep -Seconds (Get-Random -Minimum 1 -Maximum 4)
             Write-Host "Finished $_"
-        }
+        } -ThrottleLimit 10
     }
 
     It "Runs Start-ThreadJob tasks in parallel" {
